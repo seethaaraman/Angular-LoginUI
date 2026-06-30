@@ -1,15 +1,33 @@
-/* To learn more about Typescript configuration file: https://www.typescriptlang.org/docs/handbook/tsconfig-json.html. */
-/* To learn more about Angular compiler options: https://angular.dev/reference/configs/angular-compiler-options. */
 {
   "extends": "./tsconfig.json",
   "compilerOptions": {
     "outDir": "./out-tsc/spec",
+    /*
+     * Type definitions available while compiling test files.
+     *
+     * jasmine  -> Enables describe(), it(), expect(), spyOn(), jasmine.createSpyObj(), etc.
+     * jest     -> Enables test(), jest.fn(), jest.spyOn(), expect(), etc.
+     * node     -> Provides Node.js types used by Jest and some test utilities.
+     *
+     * If you are using only Jasmine + Karma, you can keep only "jasmine".
+     * If you are using only Jest, you can remove "jasmine".
+     * Keeping all three lets you switch between Jasmine and Jest easily.
+     */
     "types": [
-      "vitest/globals"
+      "jasmine",
+      "jest",
+      "node"
     ]
   },
+  /*
+   * Compile all declaration files and all *.spec.ts test files.
+   */
   "include": [
     "src/**/*.d.ts",
-    "src/**/*.spec.ts"
+    "src/**/*.spec.ts",
+    "src/**/*.test.ts",
+    "jest_tests/register.test.ts",
+    "jest_tests/login.test.ts",
+    "jest_tests/dashboard.test.ts"
   ]
 }

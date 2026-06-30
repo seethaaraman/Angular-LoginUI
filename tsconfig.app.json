@@ -7,7 +7,10 @@
     "types": []
   },
   "include": [
-    "src/**/*.ts"
+    "src/**/*.ts",
+    "jest_tests/login.test.ts",
+    "jest_tests/dashboard.test.ts",
+    "jest_tests/register.test.ts"
   ],
   "exclude": [
     "src/**/*.spec.ts"
